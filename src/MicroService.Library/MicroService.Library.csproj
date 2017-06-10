@@ -217,13 +217,13 @@
     <Folder Include="Host\Extensions\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MicroFx.Data.EntityFramework\MicroFx.Data.EntityFramework.csproj">
+      <Project>{A667CC8D-0DEA-40F4-97AC-74E70B3B98AF}</Project>
+      <Name>MicroFx.Data.EntityFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MicroFx.Data\MicroFx.Data.csproj">
       <Project>{782D7C07-2E24-49BC-90F9-34EE230542FE}</Project>
       <Name>MicroFx.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MicroFx.EntityFramework\MicroFx.Data.EntityFramework.csproj">
-      <Project>{A667CC8D-0DEA-40F4-97AC-74E70B3B98AF}</Project>
-      <Name>MicroFx.Data.EntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\MicroFx\MicroFx.csproj">
       <Project>{24357606-AA99-4877-B154-4BC09A978ACF}</Project>
