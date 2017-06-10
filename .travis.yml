@@ -1,0 +1,8 @@
+language: csharp
+solution: Ninja.MicroFx.sln
+install:
+  - nuget restore Ninja.MicroFx.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release Ninja.MicroFx.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./test/MicroService.Example.Tests/bin/Release/MicroService.Example.Tests.dll
