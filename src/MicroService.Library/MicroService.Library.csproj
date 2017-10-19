@@ -79,6 +79,12 @@
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="JustSaying.Messaging">
+      <HintPath>..\..\packages\JustSaying.4.0.306\lib\net452\JustSaying.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="JustSaying.Models">
+      <HintPath>..\..\packages\JustSaying.4.0.306\lib\net452\JustSaying.Models.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -170,7 +176,12 @@
     <Compile Include="Domain\User.cs" />
     <Compile Include="Host\ContainerModule.cs" />
     <Compile Include="Host\CustomHttpConfig.cs" />
+    <Compile Include="Host\ServiceBusConfig.cs" />
     <Compile Include="Host\SwaggerConfig.cs" />
+    <Compile Include="Messaging\Contracts\OrderAccepted.cs" />
+    <Compile Include="Messaging\Contracts\OrderCompleted.cs" />
+    <Compile Include="Messaging\Handlers\OrderAcceptedHandler.cs" />
+    <Compile Include="Messaging\Handlers\OrderCompletedHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -217,6 +228,10 @@
     <Folder Include="Host\Extensions\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MicroFx.Bus.Aws\MicroFx.Bus.Aws.csproj">
+      <Project>{19570C33-EABC-4EC4-8A9D-98AAF32B333A}</Project>
+      <Name>MicroFx.Bus.Aws</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MicroFx.Data.EntityFramework\MicroFx.Data.EntityFramework.csproj">
       <Project>{A667CC8D-0DEA-40F4-97AC-74E70B3B98AF}</Project>
       <Name>MicroFx.Data.EntityFramework</Name>

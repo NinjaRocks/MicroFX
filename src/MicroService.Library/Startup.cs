@@ -15,6 +15,6 @@ namespace MicroService.Library
 
             Use(new EntityFrameworkModule());
         }
-    }   
+    }
 }
 

@@ -7,7 +7,7 @@ namespace MicroFx.Extensibility
     public class ExtensibleModules
     {
         private readonly List<Func<IExtensibleModule>> moduleFuncs;
-        private List<IExtensibleModule> module;
+        private List<IExtensibleModule> modules;
 
         public ExtensibleModules()
         {
@@ -15,9 +15,10 @@ namespace MicroFx.Extensibility
         }
         private void Initialise()
         {
-            module = moduleFuncs.Select(y => y()).ToList();
-            var current = module[0];
-            foreach (var next in module)
+            modules = moduleFuncs.Select(y => y()).ToList();
+            if (!modules.Any()) return;
+            var current = modules[0];
+            foreach (var next in modules)
             {
                 if (current == next)
                     continue;
@@ -30,7 +31,8 @@ namespace MicroFx.Extensibility
         public void Register(IRegisterContext context)
         {
             Initialise();
-            var result = module[0].Register(context);
+            if (!modules.Any()) return;
+            var result = modules[0].Register(context);
         }
 
         public void Add(IExtensibleModule mod)

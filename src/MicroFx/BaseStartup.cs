@@ -37,12 +37,16 @@ namespace MicroFx
         }
         public void Configuration(IAppBuilder app)
         {
-            XmlConfigurator.Configure();
-
+            ConfigureLog4Net();
             ConfigureSwagger();
             ConfigureWebApiRoutes();
             ConfigureContainer(app);
             ConfigureAutomapper();
+        }
+
+        private static void ConfigureLog4Net()
+        {
+            XmlConfigurator.Configure();
         }
 
         private void ConfigureSwagger()
@@ -132,10 +136,5 @@ namespace MicroFx
 
             logger.Info("Configure automapper completed.....");
         }
-    }
-
-    public class BaseStartupConfiguration<T>
-    {
-        
     }
 }

@@ -7,7 +7,7 @@ namespace MicroFx.Data.Migration
     {
         public string Process(string contents)
         {
-            throw new NotImplementedException();
+            return contents;
         }
     }
 }

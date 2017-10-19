@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Http;
 using log4net;
 using Microsoft.Owin.Hosting;
 
@@ -32,15 +33,15 @@ namespace MicroFx
                 Port = serviceSettings.Port
             };
 
+            //app = WebApp.Start<Startup>(options);
             app = WebApp.Start(options);
-
             initialiseTasks.ForEach(task =>
             {
                 var init = task();
                 init.Start();
             });
 
-            logger.Info("Service start .....is run");
+            logger.Info($"Service running on port {serviceSettings.Port}");
         }
 
         public void Stop()
@@ -56,4 +57,10 @@ namespace MicroFx
         }
     }
 
+    //public class Startup : BaseStartup
+    //{
+    //    public Startup() : base(new HttpConfiguration())
+    //    {
+    //    }
+    //}
  }

@@ -8,4 +8,4 @@ Also, move startup tasks to be custom attribute driven.
 4. Add an example swagger represention through attributes and xml comments.
 5. Implement Security strategy - using Pluggable architecture model.
 6. Implement a service bus strategy - using Pluggable architecture model.
-7. Imp,emt a NO SQL data startegy - using Pluggable architecture model.
+7. Implement a NO SQL data startegy - using Pluggable architecture model.

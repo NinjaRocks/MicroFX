@@ -22,10 +22,10 @@ namespace MicroFx.Data.Migration
                  DeployChanges.To
                     .SqlDatabase(connectionString)
                     .WithTransaction()
-                    .WithScriptsFromFileSystem(Path.Combine(path, "Schema"))
-                    .WithScriptsFromFileSystem(Path.Combine(path, "Data"))
-                  //  .WithScripts(new ScriptProvider("Schema"))
-                  //  .WithScripts(new ScriptProvider("Data"))
+                   // .WithScriptsFromFileSystem(Path.Combine(path, "Schema"))
+                   // .WithScriptsFromFileSystem(Path.Combine(path, "Data"))
+                    .WithScripts(new ScriptProvider("Schema"))
+                    .WithScripts(new ScriptProvider("Data"))
                     //.JournalTo(new CustomJournal())
                     .LogTo(new Log4NetProvider())
                     .Build();
